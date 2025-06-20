@@ -311,7 +311,7 @@ void state_transmitting() {
 
             printf("\n%" PRIu32 "\t%d \tTransmitting   %d", time_now, send_num, send);
             
-            if (send_num++ == 0) send = 1; //(rand() % 2) + 1;
+            if (send_num++ == 0) send = (rand() % 2) + 1;
 
             if (send == 1) dm_comm_send(COMMAND1_SIG);
             if (send == 2) dm_comm_send(COMMAND2_SIG);
@@ -563,7 +563,7 @@ void state_command3_chain() {
 
 
 void state_command_clear() {
-    if(comm_state >= COMMAND1 && (time_now  >= (COMMAND_PERIOD))) {
+    if(comm_state >= COMMAND1 && (time_now  >= (COMMAND_PERIOD)) && comm_state != COMMAND3) {
         // dm_comm_start();                 // well... dm_comm_stop and dm_comm_start crashes, not needed I guess
         // vTaskDelay(pdMS_TO_TICKS(10));   // ??? without delay crashes, crashes even with, but later (after 2. or 3. iteration) ???
         multiple_led_drive(led_sig, led_sig_num, 0);
