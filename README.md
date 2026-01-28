@@ -2,6 +2,8 @@
 
 A low-cost, scalable swarm robotic platform designed for research and educational purposes, capable of infrared (IR)-based communication and basic cooperative behaviors.
 
+Playlist of videos showcasing robots and algorithms: https://www.youtube.com/playlist?list=PLNTM9zCJujTltedypfpow2rPiPkVAqfGI
+
 ![Swarm Robot](images/robot/group.jpg)
 
 ---
